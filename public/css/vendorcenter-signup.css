@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* COLORS */
+  --clr-bg: #efe2d7;
+  --clr-dark-orange: #f68b1e;
+  --clr-orange: #ff9900;
+  --clr-white: #fff;
+  --clr-off-white: #f1f1f2;
+  --clr-black: #000;
+  --clr-grey: #75757a;
+  --clr-dark-grey: #404040;
+  --clr-light-grey: #e5e5e5;
+
+  /* Border Radius */
+  --curved-edges: 5px;
+  --pill-shape: 100px;
+  --full-circle: 50%;
+
+  /* default values */
+  --box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
+  --max-width: 62%;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--clr-off-white);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.wrapper > * {
+  width: 50%;
+  height: 100%;
+}
+
+.left {
+  padding: 5%;
+}
+
+.left img {
+  width: 100%;
+  height: 100%;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.sub-heading {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 45px;
+}
+
+form {
+  width: 70%;
+  height: fit-content;
+  padding: 45px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: var(--curved-edges);
+}
+
+form select,
+form input {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 20px;
+  font-size: 1.2rem;
+  border: 1px solid var(--clr-grey);
+  color: var(--clr-grey);
+  border-radius: var(--curved-edges);
+}
+
+form #submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-block: 10px;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: var(--clr-orange);
+  color: #fff;
+  border: none;
+  border-radius: var(--curved-edges);
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: var(--clr-dark-orange);
+}
+
+form span {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: var(--clr-dark-grey);
+}
+
+.register,
+.haveAnAccount {
+  width: 60%;
+  text-align: center;
+  line-height: 1.3rem;
+}
+
+.register p {
+  font-size: 0.8rem;
+  color: var(--clr-grey);
+}
+
+.register a {
+  text-decoration: none;
+  color: blue;
+}
+
+.haveAnAccount {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.haveAnAccount a {
+  text-decoration: none;
+  color: var(--clr-orange);
+}
