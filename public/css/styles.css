@@ -35,6 +35,7 @@ body {
 /* GLOBAL STYLING */
 .button,
 .signInBtn,
+.logOutBtn,
 .liveChatBtn {
   background-color: var(--clr-dark-orange);
   text-decoration: none;
@@ -230,10 +231,15 @@ div .show {
 /* DROPDOWN */
 
 .signIn .signInBtn,
-.liveChat .liveChatBtn {
+.liveChat .liveChatBtn,
+.logOut .logOutBtn {
   color: var(--clr-white);
   padding: 10px 35px;
   font-size: 1rem;
+}
+
+.logOut .logOutBtn {
+  margin-bottom: 20px;
 }
 
 .dropdownn {
@@ -256,6 +262,10 @@ div .show {
   padding-top: 20px;
 }
 
+.noPaddingTop {
+  padding-top: 0;
+}
+
 .help-dropdown {
   padding-bottom: 20px;
 }
@@ -263,8 +273,8 @@ div .show {
 .dropdown-links button {
   width: 100%;
   text-align: left;
-  padding: 15px;
-  font-size: 1rem;
+  padding: 10px 15px;
+  font-size: 0.8rem;
   font-weight: 500;
   background-color: var(--clr-white);
   border: none;

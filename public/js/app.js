@@ -15,7 +15,22 @@ const db = firebase.database();
 auth.onAuthStateChanged((user) => {
   if (user) {
     console.log(user);
-    document.getElementById("displayName").textContent = `Hi ${user.displayName}`;
+    document.getElementById(
+      "displayName"
+    ).textContent = `Hi ${user.displayName}`;
+    document.querySelector("#dropdown1").innerHTML = `
+    <div class="dropdown-links">
+      <button class="topBtn">My Account</button>
+      <button>Orders</button>
+      <button>Inbox</button>
+      <button>Saved Items</button>
+      <button>Voucher</button>
+    </div>
+    <div class="logOut">
+      <button class="logOutBtn" onclick="logOut()">LOGOUT</button>
+    </div>`;
+
+    document.querySelector("#dropdown1").classList.add("noPaddingTop");
   }
 });
 
@@ -114,10 +129,16 @@ function showProduct(index) {
   window.location.href = "products.html";
 }
 
-document.querySelector(".signInBtn").addEventListener("click", () => {
-  window.location.href = "sign-in.html";
-  console.log("eror");
-});
+function logOut() {
+  auth
+    .signOut()
+    .then(() => {
+      window.location.href = "index.html";
+    })
+    .catch((error) => {
+      alert(error.code)
+    });
+}
 
 getTopSellers();
 

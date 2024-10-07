@@ -44,6 +44,9 @@ function verifyEmail(ev) {
   ev.preventDefault();
   let email = document.getElementById("floatingInput");
   emailValue = email.value;
+
+  // Function to check if a user with emailValue exists in the database
+
   userDetails.email = emailValue;
   if (emailValue == "" || emailValue.includes("@") == false) {
     email.classList.add("is-invalid");
@@ -278,7 +281,6 @@ function verifyGender() {
   birthDate = document.getElementById("floatingDate").value;
   userDetails.gender = gender;
   userDetails.birthDate = birthDate;
-  
 
   document.getElementById("continue").innerHTML = `
     <div class="spinner-border" role="status">
@@ -299,6 +301,7 @@ function verifyGender() {
           userDetails.uid = user.uid;
           user.updateProfile({
             displayName: firstNameValue,
+            phoneNumber: phoneNumberValue,
           });
           db.ref("users/" + user.uid).set(userDetails);
           setTimeout(() => {
@@ -313,6 +316,18 @@ function verifyGender() {
     .catch((error) => {
       var errorCode = error.code;
       var errorMessage = error.message;
-      console.log(errorCode, errorMessage);
+      auth
+        .signInWithEmailAndPassword(emailValue, passwordValue)
+        .then((userCredential) => {
+          // Signed in
+          var user = userCredential.user;
+          setTimeout(() => {
+            window.location.href = "index.html";
+          }, 1500);
+        })
+        .catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+        });
     });
 }

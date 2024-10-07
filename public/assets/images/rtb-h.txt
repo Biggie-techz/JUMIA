@@ -17,3 +17,30 @@ const port = 5000
 app.listen(port, () => {
   console.log("listening on port" + port);
 });
+
+to render html
+app.get("/", (request, response) => {
+  // response.send([
+  //   { name: "Hero", food: "yam" },
+  //   { name: "Ayo", food: "rice" },
+  //   { name: "Demi", food: "beans" },
+  //   { name: "Dami", food: "rice" },
+  //   { name: "Sola", food: "beans" },
+  //   { name: "Bami", food: "yam" }
+  // ]);
+  response.sendFile(__dirname + "/index.html");
+});
+
+
+.ejs is going to be out front end
+to install ejs, run 'npm install ejs'
+
+create .ejs folder "views"
+
+to render ejs
+const ejs = require("ejs")
+
+app.set("view engine", "ejs")
+app.get("/", (request, response) => {
+  response.render("index");
+});
