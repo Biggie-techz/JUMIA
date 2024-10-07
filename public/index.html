@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jumia Nigeria | Online Shopping Mall</title>
 
-    
     <!-- favicon -->
-    <link rel="icon" type="image/png" href="./assets/favicon/favicon-jumia.png">
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/favicon/favicon-jumia.png"
+    />
     <!-- Firebase CDN -->
-     
+
     <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-storage-compat.js"></script>
@@ -64,14 +67,14 @@
             <button class="button search-btn" id="search-btn">SEARCH</button>
             <div class="nav-links">
               <div>
-                <button class="navlinks-btn">
+                <button id="accountBtn" class="navlinks-btn">
                   <i class="fa-regular fa-user"></i>
-                  <p>Account</p>
+                  <p id="displayName">Account</p>
                   <i class="fa-solid fa-angle-down"></i>
                 </button>
-                <div class="account-dropdown dropdown">
+                <div id="dropdown1" class="account-dropdown dropdownn">
                   <div class="signIn">
-                    <button class="button">Sign in</button>
+                    <a href="sign-in.html" class="signInBtn">Sign in</a>
                   </div>
                   <div class="dropdown-links">
                     <button>My Account</button>
@@ -80,13 +83,14 @@
                   </div>
                 </div>
               </div>
+
               <div>
-                <button class="navlinks-btn">
+                <button id="helpBtn" class="navlinks-btn">
                   <i class="fa-regular fa-circle-question"></i>
                   <p>Help</p>
                   <i class="fa-solid fa-angle-down"></i>
                 </button>
-                <div class="help-dropdown dropdown">
+                <div id="dropdown2" class="help-dropdown dropdownn">
                   <div class="dropdown-links">
                     <button>Help Center</button>
                     <button>Place an order</button>
@@ -96,10 +100,11 @@
                     <button>Return & Refunds</button>
                   </div>
                   <div class="liveChat">
-                    <button class="button">LIVE CHAT</button>
+                    <a class="liveChatBtn">LIVE CHAT</a>
                   </div>
                 </div>
               </div>
+
               <div>
                 <button class="navlinks-btn">
                   <i class="fa-solid fa-cart-shopping"></i>

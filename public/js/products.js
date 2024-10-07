@@ -82,6 +82,15 @@ async function getProduct() {
     );
     const data = await response.json();
     console.log(data);
+
+    // Format the price to Nigerian Naira
+    function currencyFormatter(number) {
+      return number.toLocaleString('en-US', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0 
+      });
+    }
+    const formattedCurrency = currencyFormatter(data.price * 1650);
     document.title = `${data.title}`;
     document.getElementById("left").innerHTML = `
     <div class="top">
@@ -96,7 +105,7 @@ async function getProduct() {
       <div class="right">
         <p class="product-title">${data.title}</p>
         <div class="price-addToCart">
-          <p class="product-price">₦ ${(data.price * 1650).toFixed()}</p>
+          <p class="product-price">₦ ${formattedCurrency}</p>
           <p class="availability">In stock</p>
           <p class="shipping-detail">
             + shipping from ₦ 750 to LEKKI-AJAH (SANGOTEDO)

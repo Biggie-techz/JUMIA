@@ -1,0 +1,11 @@
+create folder
+open terminal in folder
+run 'npm init'
+
+after initializing
+run 'npm install express'
+
+
+to start a node app
+const express = require("express");
+const app = express();
