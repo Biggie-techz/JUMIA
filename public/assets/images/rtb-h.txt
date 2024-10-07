@@ -1,3 +1,5 @@
+INTRODUCTION TO NODE
+
 create folder
 open terminal in folder
 run 'npm init'
@@ -9,3 +11,9 @@ run 'npm install express'
 to start a node app
 const express = require("express");
 const app = express();
+
+const port = 5000
+
+app.listen(port, () => {
+  console.log("listening on port" + port);
+});
