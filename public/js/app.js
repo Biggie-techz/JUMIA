@@ -14,7 +14,7 @@ const db = firebase.database();
 
 auth.onAuthStateChanged((user) => {
   if (user) {
-    console.log(user);
+    // console.log(user);
     document.getElementById(
       "displayName"
     ).textContent = `Hi ${user.displayName}`;
@@ -38,7 +38,7 @@ async function getProducts() {
   try {
     const response = await fetch(`https://fakestoreapi.com/products`);
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
   } catch (error) {
     console.log(error);
   }
@@ -49,7 +49,7 @@ async function getTopSellers() {
   try {
     const response = await fetch("https://fakestoreapi.com/products");
     const topSellers = await response.json();
-    console.log(topSellers);
+    // console.log(topSellers);
     topSellersElement.innerHTML = "";
 
     // Format the price to Nigerian Naira
@@ -82,7 +82,7 @@ async function getCategories() {
       "https://fakestoreapi.com/products/categories"
     );
     const categories = await response.json();
-    console.log(categories);
+    // console.log(categories);
   } catch (error) {
     console.log(error);
   }
